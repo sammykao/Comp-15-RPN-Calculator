@@ -1,0 +1,118 @@
+A. 
+/**********************************************************
+* Project 2: CALCYOULATER
+* Sammy Kao
+* 02/23/2023
+* CS 15
+* README
+*
+*********************************************************/
+
+
+B.
+Program Purpose:
+The purpose of this program is to build a RPN Calculator.
+An RPN Calculator utilizes a stack, and ultimately computes
+with the operators to the right of two numbers. So, this program
+builds a calculator that can not only do operations, but also
+use comparison operators (<, >, >=, etc), and can calculate 
+using seperate brackets that act as parentheses or hold files
+no be executed upon
+
+C. Acknowledgements: 
+     No help was received and ideas/implementation were all organic
+
+D. Files: 
+
+parser.h: This file holds the declaration of the parseRstring function
+that takes an input stream (After we discover there will be an rstring) 
+and returns an rstring
+
+parser.cpp: This file holds the definition of the parseRstring function
+that parses an rstring from an input stream and returns it in order for us
+to add it to our stack
+   
+Datum.h: This file holds the interface of our Datum class. The datum 
+objects are objects of three types: Integer, boolean, rstring. Datum 
+object class has specific functions that we can perform on them
+such as comparisons of data types, retrival, and return a string of 
+the datum value
+
+DatumStack.h: This file holds the interface of our DatumStack Class. 
+The DatumStack Objects act as our stack for our RPNCalculators. It 
+obviously holds Datum objects, and has multiple member functions that 
+are with it. 
+
+DatumStack.cpp: This file holds the implementation of our DatumStack Class. 
+The DatumStack Object acts as our stack for our RPNCalculators. The 
+member functions that come with our DatumStack class include, retrieval,
+acess, and printing functions.
+
+RPNCalc.h: This file is the interface of the RPNCalc class. The
+RPNCalc class is basically our polished calculator program 
+with command functions implemented for the user. It runs off one 
+public run function until the user quits.
+
+RPNCalc.cpp: This file is the implementation of the RPNCalc class. The 
+main function is a public run function which calls on a private query 
+loop and other private command functions so other clients do not have 
+acess to anything except running the calculator
+
+main.cpp: This file is the main file of our project. It acts as 
+basically the user client calling upon the calculator. 
+
+unit_tests.h: This file is for testing our preliminary stage classes. 
+So, unit_test.h and the unit test driver was used to test the DatumStack
+class and also the parser.h function(s). The other classes were either
+pre-implemented (Datum.h) or tested using reference implementation 
+diff testing with testing input/files.
+
+README: This file is the description of our project program, as
+well as all files included, purpose, data structures, and an in-depth
+explanation of any explainable parts.
+
+
+E. Compile: To compile and run the program users can 
+use - Make (This will compile all our files together 
+to make our complete program)
+To compile and run testing part, users can use - Unit_test
+(Unit_test_driver.o and unit_test)
+
+F: Data Structures: The main data structure of our
+project was a stack. It was implemented in our DatumStack 
+class, and was built using imported vector class. The 
+structure was implemented by abstraction with the vector class
+so only stack type methods could be performed by the user (I.e. 
+adding to top and retrieving the top only). Stacks are optimally
+used in instances where tasks or data are performed or stored 
+sequentially but the newer ones are to be adressed firt
+in the LIFO method. This can be seen in systemic memory management 
+(Like in C++!), or even like with recursion 
+(Must do one task before moving on). A great full end algorithm example 
+of this idea of stacks is with the one of the metric first search 
+algorithm used in binary trees. A stack holds node values in the tree
+and as the tree is explored farther branch by branch, he two new paths 
+of descention down a path is put in the stack, continually adding paths
+to the stack until either no more to put on or take off and value is
+met or not met. On a micro level, algorithms for each of the stack
+functions like pop() are implemented. For pop, it starts by seeing
+if the stack is empty and returning if true, else it will remove 
+top value and de-increment stack size. Then it will return. Generally,
+the algorithms in stack structures are simpler, with only one or two
+conditionals as well as a command.
+
+
+
+G: Testing:
+The testing for the DatumStack class
+ranged from simple functionality, to more complex with multiple commands,
+to even error testing with runtime errors. parseRstring was also tested
+using the unit test driver with both a correctly syntaxed file and also
+an incorrectly syntaxed stringstream. It will throw an error message if 
+incorrectly syntaxed. For the RPNCalc class, testing was used with
+the reference implementation and diff testing. Not only were tests
+conducted using giving cyl -> cylc files, but also with files that
+were made specifically for testing.
+
+
+H: Hours Spent: 10 Hours roughly  
